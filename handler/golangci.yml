@@ -1,0 +1,16 @@
+run:
+  timeout: 60s
+
+linters:
+  enable:
+    - govet
+    - errcheck
+    - gofmt
+    - staticcheck
+    - unused
+    - gosimple
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      text: "Error return value is not checked"

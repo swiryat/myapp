@@ -1,0 +1,15 @@
+package handler
+
+import (
+    "fmt"
+    "net/http"
+)
+
+// Hello — простой обработчик, возвращает приветствие.
+func Hello(w http.ResponseWriter, r *http.Request) {
+    name := r.URL.Query().Get("name")
+    if name == "" {
+        name = "мир"
+    }
+    fmt.Fprintf(w, "Привет, %s!", name)
+}
